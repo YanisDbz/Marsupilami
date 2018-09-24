@@ -1,0 +1,43 @@
+{% include 'base.html.twig' %}
+
+<div class="main-content">
+   <div class="container">
+      <h3 class="site-title">Profile de {{username}}</h3>
+      <div class="row">
+         <div class="col-md-9">
+            <div class="row">
+               <div class="panel">
+                  <div class=" panel-body ">
+                     <div class="col-md-5">
+                        {% if gender == 'Homme' %}
+                        <img src="{{ gravatar('debbouza.yanis@outlook.fr') }}" class="img-responsive">
+                        {% elseif gender == 'Femme' %}
+                        <img src="{{ gravatar('urbn75018@gmail.com') }}" class="img-responsive">
+                        {% else %}
+                        <img src="{{ gravatar('name@domain.tld') }}" class="img-responsive">
+                        {% endif %}
+                        <div class=" clearfix">
+                        </div>
+                        <button type="button" class="btn btn-success" style="margin-top:20%;" disabled="disabled">Ajouter en ami</button>
+                     </div>
+                     <div class="col-md-7">
+                        <div class="profile-block">
+                           <ul class="list-group">
+                              <li class="list-group-item">Nombres d'amis<span class="badge">12</span></li>
+                              <li class="list-group-item">Nombres d'amis en commun<span class="badge">3</span></li>
+                              <li class="list-group-item">Age <span class="badge">{{age}}</span></li>
+                              <li class="list-group-item">Race <span class="badge">{{race}}</span></li>
+                              <li class="list-group-item">Famille <span class="badge">{{famille}}</span></li>
+                              <li class="list-group-item">Nourriture <span class="badge">{{nourriture}}</span></li>
+                              <li class="list-group-item">Sexe <span class="badge">{{gender}}</span></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</div>

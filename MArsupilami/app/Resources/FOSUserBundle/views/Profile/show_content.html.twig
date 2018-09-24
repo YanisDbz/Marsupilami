@@ -1,0 +1,35 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="main-content">
+    <div class="container">
+        <h3 class="site-title">Mon Profile</h3>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                 <div class="panel">
+                <div class=" panel-body ">
+
+                   	<div class="col-md-5">
+                      {% if user.gender == 'Homme' %}
+                        <img src="{{ gravatar('debbouza.yanis@outlook.fr') }}" class="img-responsive">
+                      {% elseif user.gender == 'Femme' %}
+                        <img src="{{ gravatar('urbn75018@gmail.com') }}" class="img-responsive">
+                      {% else %}
+                        <img src="{{ gravatar('name@domain.tld') }}" class="img-responsive">
+                      {% endif %}
+		    <div class=" clearfix">
+		        <h3>{{user.username}}</h3>
+		        <h4>{{user.age}} ans</h4>
+
+
+		    </div>
+		</div>
+		            <div class="col-md-7">
+		                 <div class="profile-block">
+                <ul class="list-group">
+    <li class="list-group-item">Nombres d'amis<span class="badge">12</span></li>
+    <li class="list-group-item">Race <span class="badge">{{user.race}}</span></li>
+    <li class="list-group-item">Famille <span class="badge">{{user.famille}}</span></li>
+    <li class="list-group-item">Nourriture <span class="badge">{{user.nourriture}}</span></li>
+    <li class="list-group-item">Sexe <span class="badge">{{user.gender}}</span></li>
+  </ul>
